@@ -70,7 +70,7 @@ Want to buy more token at once? Let's say 100? Here you go! `/buy 123`
     private = "This bot is for private use"
     membership_require = f"You need to join this group or channel to use this bot\n\nhttps://t.me/{REQUIRED_MEMBERSHIP}"
 
-    تنظیمات = """
+    settings = """
 لطفاً فرمت و کیفیت مورد نظر برای ویدیوی خود را انتخاب کنید. توجه داشته باشید که این تنظیمات فقط برای ویدیوهای یوتیوب اعمال می‌شوند.
 
 کیفیت بالا توصیه می‌شود. کیفیت متوسط معادل 720P است، در حالی که کیفیت پایین معادل 480P می‌باشد.
