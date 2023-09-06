@@ -23,7 +23,7 @@ TG_MAX_SIZE = 2000 * 1024 * 1024
 
 EXPIRE = 24 * 3600
 
-ENABLE_VIP = os.getenv("VIP", False)
+ENABLE_VIP = os.getenv("VIP", True)
 AFD_LINK = os.getenv("AFD_LINK", "https://afdian.net/@ppppp")
 COFFEE_LINK = os.getenv("COFFEE_LINK", "https://www.buymeacoffee.com/pppppp")
 COFFEE_TOKEN = os.getenv("COFFEE_TOKEN")
@@ -39,7 +39,7 @@ REQUIRED_MEMBERSHIP: str = os.getenv("REQUIRED_MEMBERSHIP", "")
 
 # celery related
 ENABLE_CELERY = os.getenv("ENABLE_CELERY", False)
-ENABLE_QUEUE = os.getenv("ENABLE_QUEUE", False)
+ENABLE_QUEUE = os.getenv("ENABLE_QUEUE", True)
 BROKER = os.getenv("BROKER", f"redis://{REDIS}:6379/4")
 
 MYSQL_HOST = os.getenv("MYSQL_HOST", "mysql")
@@ -50,13 +50,13 @@ AUDIO_FORMAT = os.getenv("AUDIO_FORMAT")
 ARCHIVE_ID = os.getenv("ARCHIVE_ID")
 
 IPv6 = os.getenv("IPv6", False)
-ENABLE_FFMPEG = os.getenv("ENABLE_FFMPEG", False)
+ENABLE_FFMPEG = os.getenv("ENABLE_FFMPEG", True)
 
 # Stripe setting
 PROVIDER_TOKEN = os.getenv("PROVIDER_TOKEN") or "1234"
 
-PLAYLIST_SUPPORT = os.getenv("PLAYLIST_SUPPORT", False)
-ENABLE_ARIA2 = os.getenv("ENABLE_ARIA2", False)
+PLAYLIST_SUPPORT = os.getenv("PLAYLIST_SUPPORT", True)
+ENABLE_ARIA2 = os.getenv("ENABLE_ARIA2", True)
 
 FREE_DOWNLOAD = os.getenv("FREE_DOWNLOAD", 20)
 TOKEN_PRICE = os.getenv("BUY_UNIT", 20)  # one USD=20 credits
