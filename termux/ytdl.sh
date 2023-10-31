@@ -46,4 +46,4 @@ curl -O https://raw.githubusercontent.com/Ptechgithub/ytdl/termux/ytdl_termux.py
 
 # Run the bot.py script
 echo "Running bot.py with $python_cmd..."
-$python_cmd bot.py
+$python_cmd ytdl_termux.py
