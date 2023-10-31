@@ -42,7 +42,7 @@ fi
 
 # Install bot.py from the external link
 echo "Downloading bot.py..."
-curl -O https://raw.githubusercontent.com/Ptechgithub/ytdl/termux/ytdl_termux.py
+curl -O https://raw.githubusercontent.com/Ptechgithub/ytdl/main/termux/ytdl_termux.py
 
 # Run the bot.py script
 echo "Running bot.py with $python_cmd..."
