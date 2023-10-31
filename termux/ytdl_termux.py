@@ -47,7 +47,7 @@ try:
 
     # Display sorted quality, format, and file size with numbers
     for i, stream in enumerate(sorted_formats):
-        print(f"{i + 1}. Quality: {stream.resolution}, F/Rate: {stream.fps} fps, Bitrate: {stream.bitrate / 1000} Kbps, Format: {stream.mime_type}, Audio Codec: {stream.audio_codec}, Filesize: {stream.filesize / 1024 / 1024:.2f} MB")
+        print(f"{i + 1}. Quality: {stream.resolution}, F/Rate: {stream.fps} fps, Bitrate: {stream.bitrate / 1000} Kbps, Format: {stream.mime_type}, Filesize: {stream.filesize / 1024 / 1024:.2f} MB")
         print(" -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ")
         
     # Let the user choose a desired format by entering a number
