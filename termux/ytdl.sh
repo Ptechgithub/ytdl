@@ -18,8 +18,8 @@ if ! command -v $python_cmd &>/dev/null; then
         choco install python -y
     else
         # Linux/Mac OS
-        sudo apt-get update
-        sudo apt-get install $python_cmd -y
+        apt-get update
+        apt-get install $python_cmd -y
     fi
 else
     echo "$python_cmd is already installed."
