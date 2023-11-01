@@ -108,6 +108,15 @@ uninstall() {
     fi
 }
 
+check_tunnel_status() {
+    # Check the status of the tunnel service
+    if sudo systemctl is-active --quiet ytdl.service; then
+        echo -e "${yellow}ydtl is: ${green}    [running ✔]${rest}"
+    else
+        echo -e "${yellow}ytdl is:${red}    [Not running ✗ ]${rest}"
+    fi
+}
+
 #Termux
 install_termux() {
     bash <(curl -fsSL https://raw.githubusercontent.com/Ptechgithub/ytdl/main/termux/install.sh)
@@ -116,6 +125,7 @@ install_termux() {
 # Main menu
 clear
 echo -e "${cyan}By --> Peyman * Github.com/Ptechgithub * ${rest}"
+check_tunnel_status
 echo -e "${yellow} ----YouTube downloader Telegram bot---- ${rest}"
 echo -e "${green}1) Install on server${rest}"
 echo -e "${red}2) Uninstall${rest}"
