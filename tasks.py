@@ -151,8 +151,8 @@ def ytdl_download_entrance(client: Client, bot_msg: types.Message, url: str, mod
         else:
             ytdl_normal_download(client, bot_msg, url)
     except Exception as e:
-        logging.error("Failed to download %s, error: %s", url, e)
-        bot_msg.edit_text(f"Download failed!❌\n\n`{traceback.format_exc()[0:4000]}`", disable_web_page_preview=True)
+        logging.error("دانلود ناموفق بود %s, error: %s", url, e)
+        bot_msg.edit_text(f"دانلود ناموفق!❌\n\n`{traceback.format_exc()[0:4000]}`", disable_web_page_preview=True)
 
 
 def direct_download_entrance(client: Client, bot_msg: typing.Union[types.Message, typing.Coroutine], url: str):
@@ -186,7 +186,7 @@ def direct_normal_download(client: Client, bot_msg: typing.Union[types.Message, 
     except TypeError:
         filename = getattr(req, "url", "").rsplit("/")[-1]
     except Exception as e:
-        bot_msg.edit_text(f"Download failed!❌\n\n```{e}```", disable_web_page_preview=True)
+        bot_msg.edit_text(f"دانلود ناموف!❌\n\n```{e}```", disable_web_page_preview=True)
         return
 
     if not filename:
@@ -213,21 +213,21 @@ def direct_normal_download(client: Client, bot_msg: typing.Union[types.Message, 
             progress=upload_hook,
             progress_args=(bot_msg,),
         )
-        bot_msg.edit_text("Download success!✅")
+        bot_msg.edit_text("داتلود با موفقیت انجام شد!✅")
 
 
 def normal_audio(client: Client, bot_msg: typing.Union[types.Message, typing.Coroutine]):
     chat_id = bot_msg.chat.id
     # fn = getattr(bot_msg.video, "file_name", None) or getattr(bot_msg.document, "file_name", None)
     status_msg: typing.Union[types.Message, typing.Coroutine] = bot_msg.reply_text(
-        "Converting to audio...please wait patiently", quote=True
+        "در حال تبدیل به صدا...لطفا صبور باشید. صبوری چیز خوبیه🌹", quote=True
     )
     orig_url: str = re.findall(r"https?://.*", bot_msg.caption)[0]
     with tempfile.TemporaryDirectory(prefix="ytdl-") as tmp:
         client.send_chat_action(chat_id, "record_audio")
         # just try to download the audio using yt-dlp
         filepath = ytdl_download(orig_url, tmp, status_msg, hijack="bestaudio[ext=m4a]")
-        status_msg.edit_text("Sending audio now...")
+        status_msg.edit_text("در حال ارسال صدا...")
         client.send_chat_action(chat_id, "upload_audio")
         for f in filepath:
             client.send_audio(chat_id, f)
@@ -248,10 +248,10 @@ def upload_transfer_sh(bm, paths: list) -> str:
     headers = {"Content-Type": monitor.content_type}
     try:
         req = requests.post("https://transfer.sh", data=monitor, headers=headers)
-        bm.edit_text(f"Download success!✅")
+        bm.edit_text(f"دانلود بادموفقیت انجام شد!✅")
         return re.sub(r"https://", "\nhttps://", req.text)
     except requests.exceptions.RequestException as e:
-        return f"Upload failed!❌\n\n```{e}```"
+        return f"دانلود ناموفق!❌\n\n```{e}```"
 
 
 def flood_owner_message(client, ex):
@@ -265,7 +265,7 @@ def ytdl_normal_download(client: Client, bot_msg: typing.Union[types.Message, ty
     video_paths = ytdl_download(url, temp_dir.name, bot_msg)
     logging.info("Download complete.")
     client.send_chat_action(chat_id, "upload_document")
-    bot_msg.edit_text("Download complete. Sending now...")
+    bot_msg.edit_text("دانلود انجام شد. در حال ارسال...")
     try:
         upload_processor(client, bot_msg, url, video_paths)
     except pyrogram.errors.Flood as e:
@@ -452,7 +452,7 @@ def gen_video_markup():
         [
             [  # First row
                 InlineKeyboardButton(  # Generates a callback query when pressed
-                    "convert to audio", callback_data="convert"
+                    "تبدیل به صدا", callback_data="convert"
                 )
             ]
         ]
