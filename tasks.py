@@ -436,12 +436,12 @@ def gen_cap(bm, url, video_path):
     free = payment.get_free_token(chat_id)
     pay = payment.get_pay_token(chat_id)
     if ENABLE_VIP:
-        remain = f"Download token count: free {free}, pay {pay}"
+        remain = f"تعداد توکن دانلود: رایگان {free}, پرداختی {pay}"
     else:
         remain = ""
     worker = get_dl_source()
     cap = (
-        f"{user_info}\n{file_name}\n\n{url}\n\nInfo: {meta['width']}x{meta['height']} {file_size}\t"
+        f"{user_info}\n{file_name}\n\n{url}\n\nاطلاعات: {meta['width']}x{meta['height']} {file_size}\t"
         f"{meta['duration']}s\n{remain}\n{worker}\n{bot_text.custom_text}"
     )
     return cap, meta
