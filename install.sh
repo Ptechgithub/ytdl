@@ -62,16 +62,13 @@ inputs() {
 #install
 install() {
     if ! systemctl is-active --quiet ytdl.service; then
-        install() {
-            check_dependencies
-            git clone https://github.com/Ptechgithub/ytdl.git
-            cd ytdl
-            apt-get update
-            pip3 install -r requirements.txt
-            inputs
-            service
-        }
-        install
+        check_dependencies
+        git clone https://github.com/Ptechgithub/ytdl.git
+        cd ytdl
+        apt-get update
+        pip3 install -r requirements.txt
+        inputs
+        service
     else
         echo "The ytdl service is already installed"
     fi
