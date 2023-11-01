@@ -399,7 +399,7 @@ def download_handler(client: Client, message: types.Message):
             free, pay, reset = payment.get_token(chat_id)
             if free + pay <= 0:
                 message.reply_text(
-                    f"You don't have enough token. Please wait until {reset} or /buy more token.", quote=True
+                    f"شما توکن کافی ندارید.  لطفاً تا {reset} صبر کنید یا برای خرید توکن /buy را ارسال کنید.", quote=True
                 )
                 redis.update_metrics("reject_token")
                 return
