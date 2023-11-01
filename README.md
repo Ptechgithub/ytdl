@@ -1,5 +1,10 @@
 # ytdlbot
 
+install YouTube downloader on server and termux
+install 
+```
+bash <(curl -fsSL https://raw.githubusercontent.com/Ptechgithub/ytdl/main/install.sh)
+```
 # Features
 
 1. fast download and upload.
