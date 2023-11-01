@@ -98,16 +98,13 @@ EOL
 
 uninstall() {
     if systemctl is-active --quiet ytdl.service; then
-        uninstall() {
-            systemctl stop ytdl.service
-            systemctl disable ytdl.service
-            rm /etc/systemd/system/ytdl.service
-            systemctl daemon-reload
-            rm -rf /root/ytdl
-        }
-        uninstall
+        systemctl stop ytdl.service
+        systemctl disable ytdl.service
+        rm /etc/systemd/system/ytdl.service
+        systemctl daemon-reload
+        rm -rf /root/ytdl
     else
-        echo "ydtl in not installed. "
+        echo "ytdl is not installed."
     fi
 }
 
