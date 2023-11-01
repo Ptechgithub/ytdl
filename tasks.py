@@ -263,7 +263,7 @@ def ytdl_normal_download(client: Client, bot_msg: typing.Union[types.Message, ty
     temp_dir = tempfile.TemporaryDirectory(prefix="ytdl-")
 
     video_paths = ytdl_download(url, temp_dir.name, bot_msg)
-    logging.info("Download complete.")
+    logging.info("دانلود تکمیل شد.")
     client.send_chat_action(chat_id, "upload_document")
     bot_msg.edit_text("دانلود انجام شد. در حال ارسال...")
     try:
@@ -272,7 +272,7 @@ def ytdl_normal_download(client: Client, bot_msg: typing.Union[types.Message, ty
         logging.critical("FloodWait from Telegram: %s", e)
         client.send_message(
             chat_id,
-            f"I'm being rate limited by Telegram. Your video will come after {e.x} seconds. Please wait patiently.",
+            f"من توسط تلگرام محدود شده ام.  ویدیوی شما پس از {e.x} ثانیه می آید.  لطفا صبور باشید.",
         )
         flood_owner_message(client, e)
         time.sleep(e.x)
