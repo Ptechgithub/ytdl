@@ -110,9 +110,9 @@ uninstall() {
 check_ytdl_status() {
     # Check the status of the ytdl service
     if sudo systemctl is-active --quiet ytdl.service; then
-        echo -e "${yellow}ydtl is: ${green}    [running ✔]${rest}"
+        echo -e "${yellow}ydtl is: ${green}  [running ✔]${rest}"
     else
-        echo -e "${yellow}ytdl is:${red}    [Not running ✗ ]${rest}"
+        echo -e "${yellow}ytdl is:${red}  [Not running ✗ ]${rest}"
     fi
 }
 
