@@ -1,6 +1,7 @@
 #!/bin/bash
 
 apt-get update && apt-get upgrade -y
+termux-setup-storage
 # Check if the operating system is Windows
 if [ "$OSTYPE" == "msys" ]; then
     # Windows OS detected
