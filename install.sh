@@ -128,9 +128,9 @@ echo -e "${cyan}By --> Peyman * Github.com/Ptechgithub * ${rest}"
 echo -e "${yellow} ----YouTube downloader Telegram bot---- ${rest}"
 echo -e "${green}1) Install on server${rest}"
 echo -e "${red}2) Uninstall${rest}"
-echo -e "${yellow} -------‐------------------------------------ ${rest}"
+echo -e "${yellow} ----------------------------------------- ${rest}"
 echo -e "${green}3) Install on Termux${rest}"
-echo -e "${yellow} -------‐------------------------------------ ${rest}"
+echo -e "${yellow} ----------------------------------------- ${rest}"
 echo -e "${yellow}0) Exit${rest}"
 read -p "Please choose: " choice
 
