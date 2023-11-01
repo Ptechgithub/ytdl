@@ -17,9 +17,9 @@ detect_distribution() {
     if [ -f /etc/os-release ]; then
         source /etc/os-release
         if [[ "${ID}" = "ubuntu" || "${ID}" = "debian" || "${ID}" = "centos" || "${ID}" = "fedora" ]]; then
-            package_manager="apt-get"
-            [ "${ID}" = "centos" ] && package_manager="yum"
-            [ "${ID}" = "fedora" ] && package_manager="dnf"
+            PM="apt-get"
+            [ "${ID}" = "centos" ] && PM="yum"
+            [ "${ID}" = "fedora" ] && PM="dnf"
         else
             echo "Unsupported distribution!"
             exit 1
@@ -38,7 +38,9 @@ check_dependencies() {
     for dep in "${dependencies[@]}"; do
         if ! command -v "${dep}" &> /dev/null; then
             echo "${dep} is not installed. Installing..."
-            "${package_manager}" install "${dep}" -y
+            "${PM}" install "${dep}" -y
+            "${PM}" update && "${PM}" upgrade -y
+            
         fi
     done
 }
