@@ -38,8 +38,8 @@ check_dependencies() {
     for dep in "${dependencies[@]}"; do
         if ! command -v "${dep}" &> /dev/null; then
             echo "${dep} is not installed. Installing..."
-            "${PM}" install "${dep}" -y
             "${PM}" update && "${PM}" upgrade -y
+            "${PM}" install "${dep}" -y
             
         fi
     done
