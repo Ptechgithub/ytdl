@@ -231,7 +231,7 @@ def normal_audio(client: Client, bot_msg: typing.Union[types.Message, typing.Cor
         client.send_chat_action(chat_id, "upload_audio")
         for f in filepath:
             client.send_audio(chat_id, f)
-        status_msg.edit_text("✅ Conversion complete.")
+        status_msg.edit_text("✅ تبدیل کامل شد.")
         Redis().update_metrics("audio_success")
 
 
