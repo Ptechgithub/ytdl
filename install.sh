@@ -109,7 +109,7 @@ uninstall() {
 }
 
 check_tunnel_status() {
-    # Check the status of the tunnel service
+    # Check the status of the ytdl service
     if sudo systemctl is-active --quiet ytdl.service; then
         echo -e "${yellow}ydtl is: ${green}    [running ✔]${rest}"
     else
