@@ -61,7 +61,7 @@ ENABLE_ARIA2 = os.getenv("ENABLE_ARIA2", True)
 FREE_DOWNLOAD = os.getenv("FREE_DOWNLOAD", 1000)
 TOKEN_PRICE = os.getenv("BUY_UNIT", 20)  # one USD=20 credits
 
-RATE_LIMIT = os.getenv("RATE_LIMIT", 1000)
+RATE_LIMIT = os.getenv("RATE_LIMIT", 20)
 
 SS_YOUTUBE = os.getenv("SS_YOUTUBE", "https://ytdlbot.dmesg.app?token=123456")
 RCLONE_PATH = os.getenv("RCLONE")
