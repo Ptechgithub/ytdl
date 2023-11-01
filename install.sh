@@ -75,8 +75,6 @@ install() {
     fi
 }
 
-
-
 service() {
     cat <<EOL > /etc/systemd/system/ytdl.service
 [Unit]
