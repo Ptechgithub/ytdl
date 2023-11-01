@@ -22,7 +22,7 @@ from utils import get_func_queue
 
 
 class BotText:
-    start ="به ربات دانلودر خوش آمدید. برای راهنمایی /help را ارسال کنید."
+    start ="🖐به ربات دانلودر خوش آمدید. برای راهنمایی /help را ارسال کنید."
     help = f"""
 1. این ربات باید در همه زمان‌ها کار کند. اگر کار نمی‌کند، لطفاً چند دقیقه صبر کنید و دوباره لینک را ارسال کنید.
 
@@ -31,10 +31,10 @@ class BotText:
 
 3. شما می‌توانید توکن‌های بیشتری بخرید. برای اطلاعات بیشتر /buy را وارد کنید.
 
-4. کد منبع این ربات همیشه باز خواهد ماند و می‌توانید آن را در اینجا پیدا کنید: https://github.com/Ptechgithub/ytdl
+4. سورس ربات: https://github.com/Ptechgithub/ytdl
     """
 
-    about = "دانلودر یوتیوب توسط @Peyman.\n\nمنبع باز در گیت‌هاب: https://github.com/Ptechgithub/ytdl"
+    about = "✅️ ربات دانلودر یوتیوب\n\nآدرس گیتهاب:\n https://github.com/Ptechgithub/ytdl"
 
     buy = f"""
 **Terms:**
@@ -87,9 +87,10 @@ Want to buy more token at once? Let's say 100? Here you go! `/buy 123`
     def get_receive_link_text() -> str:
         reserved = get_func_queue("reserved")
         if ENABLE_CELERY and reserved:
-            text = f"Too many tasks. Your tasks was added to the reserved queue {reserved}."
+            text = f"درخواست بیش از حد مجاز.  درخواست شما در لیست انتظار قرار گرفت. {reserved}."
         else:
-            text = "Your task was added to active queue.\nProcessing...\n\n"
+            text = "درخواست شما به لیست انتظار اضافه شد.\n در حال
+پردازش...\n\n"
 
         return text
 
