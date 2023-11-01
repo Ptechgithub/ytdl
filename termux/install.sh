@@ -19,6 +19,7 @@ if ! command -v $python_cmd &>/dev/null; then
     else
         # Linux/Mac OS
         apt-get update
+        apt-get update -y
         apt-get install $python_cmd -y
     fi
 else
