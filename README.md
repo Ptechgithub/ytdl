@@ -5,6 +5,7 @@ install
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Ptechgithub/ytdl/main/install.sh)
 ```
+![6](https://raw.githubusercontent.com/Ptechgithub/configs/main/media/6.jpg)
 # Features
 
 1. fast download and upload.
