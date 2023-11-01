@@ -89,8 +89,7 @@ Want to buy more token at once? Let's say 100? Here you go! `/buy 123`
         if ENABLE_CELERY and reserved:
             text = f"درخواست بیش از حد مجاز.  درخواست شما در لیست انتظار قرار گرفت. {reserved}."
         else:
-            text = "درخواست شما به لیست انتظار اضافه شد.\n در حال
-پردازش...\n\n"
+            text = "درخواست شما به لیست انتظار اضافه شد.\n در حال پردازش...\n\n"
 
         return text
 
