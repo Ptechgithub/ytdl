@@ -65,7 +65,6 @@ install() {
         check_dependencies
         git clone https://github.com/Ptechgithub/ytdl.git
         cd ytdl
-        apt-get update
         pip3 install -r requirements.txt
         inputs
         service
