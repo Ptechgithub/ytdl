@@ -133,7 +133,7 @@ def forward_video(client, bot_msg, url: str):
 
     caption, _ = gen_cap(bot_msg, url, obj)
     res_msg.edit_text(caption, reply_markup=gen_video_markup())
-    bot_msg.edit_text(f"Download success!✅✅✅")
+    bot_msg.edit_text(f"دانلود با موفقیت انجام شد!✅✅✅")
     redis.update_metrics("cache_hit")
     return True
 
@@ -278,7 +278,7 @@ def ytdl_normal_download(client: Client, bot_msg: typing.Union[types.Message, ty
         time.sleep(e.x)
         upload_processor(client, bot_msg, url, video_paths)
 
-    bot_msg.edit_text("Download success!✅")
+    bot_msg.edit_text("دانلود با موفقیت انجام شد!✅")
 
     # setup rclone environment var to back up the downloaded file
     if RCLONE_PATH:
