@@ -56,7 +56,9 @@ inputs() {
 
     read -p "Please enter Telegram Bot TOKEN: " TOKEN
     sed -i "s/TOKEN = os.getenv(\"TOKEN\", \"C\")/TOKEN = os.getenv(\"TOKEN\", \"$TOKEN\")/" config.py
-
+    
+    read -p "Please enter the number of free downloads: [default : 20]" FREE_DOWNLOAD
+    sed -i "s/FREE_DOWNLOAD = os.getenv(\"FREE_DOWNLOAD\", 20)/FREE_DOWNLOAD = os.getenv(\"FREE_DOWNLOAD\", $FREE_DOWNLOAD)/" config.py
 }
 
 #install
